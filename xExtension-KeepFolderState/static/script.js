@@ -13,6 +13,9 @@ $(document).ready(function(){
         thisState = localStorage.getItem('freshrss-toggle-state-' + identifier);
         if (thisState) {
             if ($('.tree-folder-title>.dropdown-toggle[data-uid="' + identifier + '"]').length) {
+
+                $(this).parent().next(".tree-folder-items").addClass('active');
+
                 $(this).parent().next(".tree-folder-items").show(0, function () {
                     $(document.body).trigger("sticky_kit:recalc");
                 });
